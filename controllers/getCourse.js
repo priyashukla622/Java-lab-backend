@@ -2,14 +2,12 @@ import Course from "../Models/courseModel.js";
 
 const getCourse = async (req, res) => {
   try {
-    const courses = await Course.find(); // Fetch all courses
+    const courses = await Course.find();
     res.status(200).json(courses);
   } catch (error) {
     res.status(500).json({ message: "Error fetching courses", error });
   }
 };
-
-// 📌 2. Get Course by ID
 const getAll = async (req, res) => {
   try {
     const course = await Course.findById(req.params.id);
@@ -21,7 +19,5 @@ const getAll = async (req, res) => {
     res.status(500).json({ message: "Error fetching course by ID", error });
   }
 };
-
-// ✅ Correct Export
 export { getCourse, getAll };
 

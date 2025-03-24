@@ -18,7 +18,6 @@ const addCourse=async(req,res)=>{
         });
         await courseData.save();
         res.status(201).json({message:"course added successfully"})
-
     }
     catch(error){
         console.log("Error is comming")

@@ -2,8 +2,6 @@ import Course from "../Models/courseModel.js";
 const updateCourse = async (req, res) => {
   try {
     const { id } = req.params; 
-    console.log("Updating course with ID:", id);
-
     const updateData = req.body; 
     console.log("Update Data:", updateData);
     const existingCourse = await Course.findById(id);
@@ -22,5 +20,4 @@ const updateCourse = async (req, res) => {
     res.status(500).json({ message: "Error updating course", error: error.message });
   }
 };
-
 export default updateCourse;

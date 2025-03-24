@@ -6,6 +6,10 @@ const app = express();
 
 const port = process.env.PORT;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8e0e51f4135955e46dd4927bc2def2fffcdb16d7
 const mongoURI = process.env.MONGODB_URL;
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,

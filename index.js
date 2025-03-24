@@ -4,16 +4,19 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import courseRouter from "./Routes/Route.js"; 
+import router from "./Routes/authRoute.js";
+
+
+dotenv.config(); 
+const app = express();
+
+const port = process.env.PORT;
+app.use(express.json()
+
 
 dotenv.config();
 
-const app = express();
-const port = process.env.PORT || 5000; 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8e0e51f4135955e46dd4927bc2def2fffcdb16d7
 const mongoURI = process.env.MONGODB_URL;
 
 mongoose.connect(mongoURI, {
@@ -25,11 +28,11 @@ mongoose.connect(mongoURI, {
     console.error("MongoDB Connection Error:", err);
 });
 
-app.use(cors());
-app.use(express.json());
 
+app.use("/api/auth",router)
 
 app.use("/api/courses", courseRouter);
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)

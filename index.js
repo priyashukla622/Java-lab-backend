@@ -1,15 +1,15 @@
 import express from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv";
+import router from "./Routes/authRoute.js";
+
+
 dotenv.config(); 
 const app = express();
 
 const port = process.env.PORT;
+app.use(express.json())
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8e0e51f4135955e46dd4927bc2def2fffcdb16d7
 const mongoURI = process.env.MONGODB_URL;
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -21,9 +21,8 @@ mongoose.connect(mongoURI, {
     console.error("MongoDB Connection Error:", err);
 });
 
-app.get("/", function (req, resp) {
-    resp.send("home");
-});
+app.use("/api/auth",router)
+
 
 app.listen(port, () => {
     console.log(`Server running on the port ${port}`);

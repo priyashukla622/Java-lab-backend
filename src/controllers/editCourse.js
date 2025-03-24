@@ -1,3 +1,4 @@
+
 import Course from "../Models/courseModel.js";
 const updateCourse = async (req, res) => {
   try {
@@ -20,5 +21,4 @@ const updateCourse = async (req, res) => {
     res.status(500).json({ message: "Error updating course", error: error.message });
   }
 };
-
 export default updateCourse;

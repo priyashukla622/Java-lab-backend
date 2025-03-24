@@ -20,4 +20,3 @@ const getAll = async (req, res) => {
   }
 };
 export { getCourse, getAll };
-
